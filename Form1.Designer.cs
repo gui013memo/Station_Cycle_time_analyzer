@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            GetRawLogs_btn = new Button();
             textBox1 = new TextBox();
+            monthCalendar1 = new MonthCalendar();
             SuspendLayout();
             // 
-            // button1
+            // GetRawLogs_btn
             // 
-            button1.Location = new Point(327, 357);
-            button1.Name = "button1";
-            button1.Size = new Size(165, 81);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            GetRawLogs_btn.Location = new Point(78, 357);
+            GetRawLogs_btn.Name = "GetRawLogs_btn";
+            GetRawLogs_btn.Size = new Size(165, 81);
+            GetRawLogs_btn.TabIndex = 0;
+            GetRawLogs_btn.Text = "Get raw logs";
+            GetRawLogs_btn.UseVisualStyleBackColor = true;
+            GetRawLogs_btn.Click += GetRawLogs_btn_Click;
             // 
             // textBox1
             // 
@@ -50,13 +51,20 @@
             textBox1.Size = new Size(798, 351);
             textBox1.TabIndex = 1;
             // 
+            // monthCalendar1
+            // 
+            monthCalendar1.Location = new Point(29, 76);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(monthCalendar1);
             Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(GetRawLogs_btn);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -65,7 +73,8 @@
 
         #endregion
 
-        private Button button1;
+        private Button GetRawLogs_btn;
         private TextBox textBox1;
+        private MonthCalendar monthCalendar1;
     }
 }

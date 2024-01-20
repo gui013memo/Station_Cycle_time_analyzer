@@ -3,14 +3,8 @@ using System.IO;
 namespace Station_Cycle_time_analyzer
 {
 
-
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
         public partial class Product
         {
             public string blockNumber = string.Empty;
@@ -18,10 +12,57 @@ namespace Station_Cycle_time_analyzer
             public DateTime signOutTimeStamp;
         }
 
+        public partial class StationLog
+        {
+            public string stationName = string.Empty;
+            public string logContent = string.Empty;
+            public DateTime logDate;
+
+            public StationLog(string stationName)
+            {
+                this.stationName = stationName;
+            }
+
+            public StationLog()
+            { /*Empty constructor*/ }
+        }
+
         List<Product> productList = new List<Product>();
 
-        private void button1_Click(object sender, EventArgs e)
+        List<StationLog> stationsList = new List<StationLog>
         {
+            new StationLog("Station-4"),
+            new StationLog("Station-5"),
+            new StationLog("Station-6"),
+            new StationLog("Station-7"),
+            new StationLog("Station-8"),
+            new StationLog("Station-9"),
+            new StationLog("Station-10"),
+            new StationLog("Station-11"),
+            new StationLog("Station-12"),
+            new StationLog("Station-13"),
+            new StationLog("Station-14")
+        };
+
+        public Form1()
+        {
+            InitializeComponent();
+            GetLogs(stationsList);
+        }
+
+        private List<StationLog> GetLogs(List<StationLog> stationLog)
+        {
+            foreach (var station in stationLog)
+            {
+                StreamReader sr = new StreamReader(System.IO.Directory.GetCurrentDirectory() + "\\log.txt");
+            }
+
+            return stationLog;
+        }
+
+        private void GetRawLogs_btn_Click(object sender, EventArgs e)
+        {
+
             String line = string.Empty;
             try
             {
@@ -37,7 +78,7 @@ namespace Station_Cycle_time_analyzer
                     if (line.Contains("Barcode step 4/4"))
                     {
                         Product product = new Product();
-                        
+
                         product.signInTimeStamp = DateTime.Parse(line.Substring(0, 13));
                         textBox1.Text = product.signInTimeStamp.ToLongTimeString();
 
@@ -46,6 +87,8 @@ namespace Station_Cycle_time_analyzer
                         textBox1.Text = product.blockNumber;
 
 
+
+                        //product.signOutTimeStamp = 
                         //productList.Add()
                     }
                 }
@@ -54,8 +97,9 @@ namespace Station_Cycle_time_analyzer
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Exception: " + exc.Message);
+                MessageBox.Show("Exception: " + exc.Message);
             }
         }
+
     }
 }
