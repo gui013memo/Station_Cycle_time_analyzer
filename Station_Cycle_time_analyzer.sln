@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Station_Cycle_time_analyzer", "Station_Cycle_time_analyzer.csproj", "{ACB10765-2E77-44CE-98E3-9272B80B0680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Station_Cycle_time_analyzer", "Station_Cycle_time_analyzer.csproj", "{ACB10765-2E77-44CE-98E3-9272B80B0680}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2501BF0C-74C8-4786-A937-E15637CAD35D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
