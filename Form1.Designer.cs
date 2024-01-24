@@ -30,14 +30,15 @@
         {
             GetRawLogs_btn = new Button();
             textBox1 = new TextBox();
-            monthCalendar1 = new MonthCalendar();
+            ExportCSV_btn = new Button();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // GetRawLogs_btn
             // 
-            GetRawLogs_btn.Location = new Point(78, 357);
+            GetRawLogs_btn.Location = new Point(21, 215);
             GetRawLogs_btn.Name = "GetRawLogs_btn";
-            GetRawLogs_btn.Size = new Size(165, 81);
+            GetRawLogs_btn.Size = new Size(115, 81);
             GetRawLogs_btn.TabIndex = 0;
             GetRawLogs_btn.Text = "Get raw logs";
             GetRawLogs_btn.UseVisualStyleBackColor = true;
@@ -45,24 +46,38 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(0, 0);
+            textBox1.Location = new Point(12, 12);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(798, 351);
+            textBox1.Size = new Size(321, 141);
             textBox1.TabIndex = 1;
             // 
-            // monthCalendar1
+            // ExportCSV_btn
             // 
-            monthCalendar1.Location = new Point(29, 76);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 2;
+            ExportCSV_btn.Location = new Point(208, 215);
+            ExportCSV_btn.Name = "ExportCSV_btn";
+            ExportCSV_btn.Size = new Size(115, 81);
+            ExportCSV_btn.TabIndex = 2;
+            ExportCSV_btn.Text = "Export CSV";
+            ExportCSV_btn.UseVisualStyleBackColor = true;
+            ExportCSV_btn.Click += ExportCSV_btn_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(12, 173);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(321, 27);
+            textBox2.TabIndex = 3;
+            textBox2.Text = "OP20M1";
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(monthCalendar1);
+            ClientSize = new Size(348, 317);
+            Controls.Add(textBox2);
+            Controls.Add(ExportCSV_btn);
             Controls.Add(textBox1);
             Controls.Add(GetRawLogs_btn);
             Name = "Form1";
@@ -75,6 +90,7 @@
 
         private Button GetRawLogs_btn;
         private TextBox textBox1;
-        private MonthCalendar monthCalendar1;
+        private Button ExportCSV_btn;
+        private TextBox textBox2;
     }
 }
